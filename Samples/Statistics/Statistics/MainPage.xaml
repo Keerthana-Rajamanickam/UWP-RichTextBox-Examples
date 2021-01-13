@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="Statistics.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Statistics"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:RichTextBoxAdv="using:Syncfusion.UI.Xaml.RichTextBoxAdv"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid  Grid.Row="0">
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <TextBlock Text="Words" FontSize="15" HorizontalAlignment="left" />
+                <Border BorderBrush="#FF0B232F" BorderThickness="1" VerticalAlignment="Top">
+                    <TextBlock Name="WordCount" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"  Text="{Binding richTextBoxAdv.WordCount}"  Height="30" Width="30" />
+                </Border>
+
+                <TextBlock Text="Paragraphs" FontSize="15"/>
+                <Border BorderBrush="#FF0B232F" BorderThickness="1" VerticalAlignment="Top">
+                    <TextBlock Name="ParagraphCount" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding richTextBoxAdv.ParagraphCount}"  Height="30" Width="30" />
+                </Border>
+
+                <TextBlock Text="TotalPages"  FontSize="15"/>
+                <Border BorderBrush="#FF0B232F" BorderThickness="1" VerticalAlignment="Top">
+                    <TextBlock Name="PageCount" FontSize="15" Text="{Binding richTextBoxAdv.PageCount}"  Height="30" Width="30"  />
+                </Border>
+
+                <TextBlock Text="CurrentPage" Height="50"  FontSize="15"  />
+                <Border BorderBrush="#FF0B232F" BorderThickness="1" VerticalAlignment="Top">
+                    <TextBlock x:Name="CurrentPageNumber" FontSize="15" Text="{Binding richTextBoxAdv.CurrentPageNumber}"  Height="30" Width="30" />
+                </Border>
+            </StackPanel>
+        </Grid>
+        <RichTextBoxAdv:SfRichTextBoxAdv x:Name="richTextBoxAdv" Grid.Row="2" />
+    </Grid>
+</Page>
